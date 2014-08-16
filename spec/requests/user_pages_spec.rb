@@ -16,7 +16,7 @@ describe "User pages" do
 
     before {visit user_path(user) }
 
-    it { should have_selector('h1', text: user.name) }
+    it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
   end
 
@@ -61,6 +61,7 @@ describe "with valid information" do
 
         it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_link('Sign out') }
       end
     end
   end
